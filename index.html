@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>مرحباً بطلاب نظم المعلومات الجدد — الجامعة التكنولوجية</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f7fc;--card:#fff;--ink:#14213d;--mut:#5b6784;--pri:#12296b;--pri2:#1b3d9c;--gold:#f0a30a;--ch:#1c1c1c;--pur:#6a1b9a;--line:#dfe5f2;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1226;--card:#131c38;--ink:#eaf0ff;--mut:#9fb0d6;--pri:#7ea2ff;--pri2:#5b86ff;--line:#243056}}
+:root[data-theme="dark"]{--bg:#0b1226;--card:#131c38;--ink:#eaf0ff;--mut:#9fb0d6;--pri:#7ea2ff;--pri2:#5b86ff;--line:#243056}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+*{box-sizing:border-box}
+body{margin:0;font-family:Cairo,Tahoma,sans-serif;background:var(--bg);color:var(--ink);line-height:1.9}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--card);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:14px;padding:8px 16px;overflow-x:auto}
+nav img{height:38px;width:38px;border-radius:50%;object-fit:cover}
+nav a{color:var(--ink);text-decoration:none;font-weight:600;font-size:14px;white-space:nowrap;padding:4px 8px;border-radius:8px}
+nav a:hover{background:var(--line)}
+.hero{background:linear-gradient(135deg,#0f2a6b,#1f4fd8 60%,#3a6bff);color:#fff;text-align:center;padding:48px 18px 60px}
+.logos{display:flex;justify-content:center;gap:18px;align-items:center;margin-bottom:18px}
+.logos img{height:96px;width:96px;border-radius:22px;background:#fff;padding:6px;object-fit:contain}
+.hero h1{font-size:clamp(26px,6vw,44px);margin:6px 0;font-weight:800}
+.hero p{max-width:720px;margin:10px auto;opacity:.93}
+.btn{display:inline-block;border:0;cursor:pointer;font:600 16px Cairo,sans-serif;padding:11px 24px;border-radius:12px;background:var(--gold);color:#1b1500;text-decoration:none;margin:6px;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.alt{background:transparent;color:inherit;border:2px solid currentColor}
+section{max-width:1000px;margin:0 auto;padding:44px 18px}
+h2{color:var(--pri);font-size:28px;margin:0 0 18px;position:relative;padding-right:14px}
+h2:before{content:"";position:absolute;right:0;top:8px;bottom:8px;width:5px;border-radius:4px;background:var(--gold)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 6px 18px rgba(15,42,107,.06)}
+.card h3{margin:0 0 6px;color:var(--pri);font-size:18px}
+.num{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--gold);color:#1b1500;font-weight:800;margin-left:8px}
+.stats{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0}
+.stat{flex:1;min-width:130px;text-align:center;background:var(--pri);color:#fff;border-radius:16px;padding:14px}
+:root[data-theme="dark"] .stat,:root:not([data-theme="light"]) .stat{color:#0b1226}
+.stat b{display:block;font-size:30px}
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 16px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:700;color:var(--pri)}
+.tags span{display:inline-block;background:var(--line);border-radius:20px;padding:2px 12px;margin:3px;font-size:14px}
+form{display:grid;gap:12px}
+label{font-weight:600;font-size:14px}
+input,select{width:100%;padding:11px 12px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:16px Cairo,sans-serif}
+small.h{color:var(--mut)}
+.msg{padding:12px;border-radius:12px;margin-top:8px;display:none}
+.ok{background:#dff6e6;color:#0b5a25}.err{background:#fde4e4;color:#8a1515}
+footer{text-align:center;padding:26px 16px;background:var(--pri);color:#fff;font-size:14px}
+footer a{color:var(--gold)}
+#adm{display:none;position:fixed;inset:0;background:rgba(5,10,30,.7);z-index:50;overflow:auto;padding:16px}
+#adm .box{background:var(--card);max-width:960px;margin:20px auto;border-radius:18px;padding:20px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{border-bottom:1px solid var(--line);padding:8px;text-align:right}
+th{background:var(--line)}
+.wrap{overflow-x:auto}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:10px 0}
+.row input,.row select{flex:1;min-width:140px}
+.tbtn{position:fixed;left:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:30;width:44px;height:44px;border-radius:50%;border:0;background:var(--gold);cursor:pointer;font-size:20px}
+
+.top{background:var(--ch);color:#f3e6c4;font-size:13px;text-align:center;padding:6px 10px;border-bottom:3px solid var(--gold);letter-spacing:.3px}
+nav{padding:8px max(16px,calc((100% - 1000px)/2));background:var(--card);border-bottom:1px solid var(--line);box-shadow:0 2px 10px rgba(18,41,107,.08)}
+.brand{display:flex;align-items:center;gap:10px;margin-left:10px;padding-left:14px;border-left:2px solid var(--gold)}
+.brand img{height:44px;width:44px;border-radius:10px;background:#fff;padding:2px;object-fit:contain;border:1px solid var(--line)}
+.brand b{font-size:13px;line-height:1.3;color:var(--pri);white-space:nowrap}
+nav a{border-bottom:2px solid transparent;border-radius:0}nav a:hover{background:none;border-bottom-color:var(--gold);color:var(--pri)}
+.hero{background:radial-gradient(circle at 85% 20%,rgba(240,163,10,.22),transparent 45%),linear-gradient(160deg,#0a1a4a,#12296b 55%,#2a1a6b);text-align:right;padding:54px 18px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;inset:auto 0 0 0;height:6px;background:linear-gradient(90deg,var(--gold),var(--pur),var(--pri2))}
+.hin{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr;gap:28px;align-items:center}
+.kick{display:inline-block;border:1px solid var(--gold);color:var(--gold);border-radius:20px;padding:2px 14px;font-size:13px;font-weight:600}
+.hero h1{font-size:clamp(26px,5vw,40px);line-height:1.5}
+.seal{display:flex;flex-direction:column;gap:14px;align-items:center}
+.plate{background:#fff;border-radius:20px;padding:12px;width:100%;max-width:260px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.35);border-bottom:5px solid var(--gold)}
+.plate img{height:110px;max-width:100%;object-fit:contain}
+.plate span{display:block;color:#12296b;font-weight:700;font-size:13px;margin-top:4px}
+@media(max-width:720px){.hin{grid-template-columns:1fr;text-align:center}.brand b{display:none}}
+.btn{background:var(--gold);color:#1c1c1c;border-radius:8px;box-shadow:0 3px 0 #b97d00}
+.btn.alt{box-shadow:none;border-radius:8px}
+h2{padding:0 0 10px;border-bottom:2px solid var(--line)}h2:before{inset:auto 0 -2px auto;top:auto;width:90px;height:3px;bottom:-2px}
+.card{border-radius:10px;border-top:4px solid var(--gold)}
+.stat{border-radius:10px;border-bottom:4px solid var(--gold);background:linear-gradient(160deg,#12296b,#1b3d9c)}
+.stat b{color:var(--gold)}
+:root[data-theme="dark"] .stat,:root:not([data-theme="light"]) .stat{color:#fff}
+.num{border-radius:6px;background:var(--pri);color:#fff}
+footer{background:var(--ch);border-top:4px solid var(--gold);color:#e9e2cf}
+.fl{display:flex;justify-content:center;gap:12px;margin-bottom:10px}.fl img{height:46px;width:46px;border-radius:10px;background:#fff;padding:2px;object-fit:contain}
+.tbtn{background:var(--pri);color:#fff}
+
+.hero{background:radial-gradient(circle at 15% 30%,rgba(240,163,10,.18),transparent 45%),linear-gradient(180deg,#fff,#e9eefb);color:#12296b}
+.hero h1{color:#12296b}.hero p{color:#33415f;opacity:1}
+.hero .btn.alt{color:#12296b;border-color:#12296b}
+.kick{border-color:#12296b;color:#12296b;background:rgba(18,41,107,.06)}
+.hin{grid-template-columns:1.2fr 1fr}
+.seal{flex-direction:row;justify-content:center;align-items:center;gap:22px;flex-wrap:wrap}
+.plate{background:none;box-shadow:none;border:0;padding:0;max-width:none;width:auto}
+.plate img{height:230px;filter:drop-shadow(0 10px 14px rgba(18,41,107,.25))}
+.plate:nth-child(2) img{height:200px;border-radius:26px}
+.plate span{color:#12296b;font-size:14px;margin-top:8px}
+.plate:first-child{padding-left:22px;border-left:2px solid var(--gold)}
+@media(max-width:720px){.plate img{height:150px}.plate:nth-child(2) img{height:135px}.plate:first-child{padding-left:14px}}
+.brand img:first-child{padding:3px}
+
+body{font-size:17px;line-height:2}
+nav{background:rgba(255,255,255,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) nav{background:rgba(19,28,56,.85)}}
+:root[data-theme="dark"] nav{background:rgba(19,28,56,.85)}
+.brand img{background:transparent;border:0;border-radius:0;padding:0;object-fit:contain}
+.brand img:first-child{height:48px;width:40px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .brand img{background:#fff;border-radius:8px;padding:2px}}
+:root[data-theme="dark"] .brand img{background:#fff;border-radius:8px;padding:2px}
+nav a{font-size:15px;font-weight:700}
+.top{font-size:14px;font-weight:600;background:#0a1a4a;color:#fff}
+.hero h1{font-size:clamp(28px,5.2vw,44px);font-weight:800}
+.hero p{font-size:18px}
+.plate:nth-child(2) img{border-radius:0;height:190px}
+.plate span{font-size:15px;font-weight:800}
+h2{font-size:30px;font-weight:800}
+.card{font-size:16.5px}.card h3{font-size:20px}
+.fl img{border-radius:10px;background:#fff}
+#cinfo a{color:var(--pri);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="top">الجامعة التكنولوجية · كلية علوم الحاسوب وتقانة المعلومات</div>
+<nav><div class="brand"><img src="assets/uni.png" alt="شعار الجامعة"><img src="assets/assoc.png" alt="شعار الجمعية"><b>الجامعة التكنولوجية<br>جمعية نظم المعلومات</b></div><a href="#home">الرئيسية</a><a href="#assoc">الجمعية</a><a href="#uni">الجامعة</a><a href="#faculty">الكلية</a><a href="#articles">مقالات</a><a href="#register">التسجيل</a><a href="#contact">تواصل</a></nav>
+
+<header class="hero" id="home"><div class="hin"><div><span class="kick">بوابة الطالب الجديد · الدفعة المقبولة 2026</span>
+<h1>مرحباً بك في عالم البيانات والنظم الرقمية</h1>
+<p>ترحب بكم جمعية نظم المعلومات وتبارك لكم القبول في الجامعة التكنولوجية، ونأمل أن تكون هذه بداية جديدة لنمو مهاراتكم وقدراتكم الوظيفية.</p>
+<a class="btn" href="#register">سجّل بياناتك الآن</a><a class="btn alt" href="#assoc">تعرّف على الجمعية</a><a class="btn alt" href="https://wa.me/249900864347" target="_blank" rel="noopener">استفسار واتساب: 0900864347</a></div>
+<div class="seal"><div class="plate"><img src="assets/uni.png" alt="شعار الجامعة التكنولوجية"><span>الجامعة التكنولوجية</span></div><div class="plate"><img src="assets/assoc.png" alt="شعار جمعية نظم المعلومات"><span>جمعية نظم المعلومات</span></div></div></div></header>
+
+<section id="assoc">
+<h2>جمعية نظم المعلومات</h2>
+<p>نشرح لكم بصورة مبسطة مهام الجمعية وكيف يمكن للطالب الاستفادة منها:</p>
+<div class="grid">
+<div class="card"><span class="num">١</span>تعزيز الترابط والتعاون بين الطلاب الجدد وربطهم بالطلاب الأقدم.</div>
+<div class="card"><span class="num">٢</span>ربط الطلاب بالمشاريع البحثية المتطورة الخاصة بالجامعة.</div>
+<div class="card"><span class="num">٣</span>إلحاق الطلاب بمجموعة واسعة من البحوث والامتحانات السابقة.</div>
+<div class="card"><span class="num">٤</span>برامج وفعاليات تثقيفية تعزز العلاقة بين الدفعات داخل الجامعة وخارجها.</div>
+<div class="card"><span class="num">٥</span>حل مختلف المشاكل التي قد تواجه الطلاب بصورة شاملة.</div>
+<div class="card"><span class="num">٦</span>التعاون مع الإدارات المختلفة للتوصل لحل النزاعات المحتملة بين الطلاب والإدارات.</div>
+</div>
+</section>
+
+<section id="uni">
+<h2>عن الجامعة التكنولوجية</h2>
+<p>بدأت عام 1991 كلية أهلية خيرية في الخرطوم باسم «كلية الخرطوم للعلوم والتقانة»، وركّزت منذ يومها الأول على التعليم العملي والتطبيقي. نمت من قسمين (الدراسات التجارية وعلوم الحاسوب) إلى كلية تقنية بمعامل وورش وكادر متميز، حتى رُقّيت عام 2018 إلى جامعة حكومية بعد استيفائها الشروط الأكاديمية.</p>
+<div class="stats"><div class="stat"><b>1991</b>التأسيس</div><div class="stat"><b>2018</b>الترقية إلى جامعة حكومية</div><div class="stat"><b>2026</b>اعتماد مرتبة الشرف</div></div>
+<p>وفي 20 أغسطس 2026 اعتُمدت لها مرتبة الشرف للبكالوريوس التكنولوجي (5 سنوات)، فشهادتك معترف بها داخل السودان وخارجه، وتؤهلك للالتحاق المباشر بالماجستير دون سنة تأهيلية.</p>
+<div class="tags"><span>الهندسة والعمارة</span><span>علوم الحاسوب وتقانة المعلومات</span><span>الدراسات التجارية</span><span>علوم التمريض</span><span>القانون</span><span>الدراسات العليا</span><span>المختبرات الطبية</span></div>
+</section>
+
+<section id="faculty">
+<h2>كلية علوم الحاسوب وتقانة المعلومات</h2>
+<p>كانت علوم الحاسوب أحد القسمين اللذين انطلقت بهما الجامعة عام 1991. تجمع الدراسة بين الأساس النظري والتطبيق العملي في المعامل، وتُعدّ الطالب للعمل في البرمجة وقواعد البيانات والشبكات وتحليل النظم وتطوير التطبيقات.</p>
+<div class="grid">
+<div class="card"><h3>نظم معلومات — محاسبية</h3>ربط النظم الرقمية بالمحاسبة والتقارير المالية.</div>
+<div class="card"><h3>نظم معلومات — إدارية</h3>نظم دعم القرار وإدارة المؤسسات والبيانات.</div>
+<div class="card"><h3>نظم معلومات — مصرفية</h3>التقنية المالية والأنظمة المصرفية الحديثة.</div>
+</div>
+</section>
+
+<section id="articles">
+<h2>مقالات</h2>
+<details open><summary>رحلة الجامعة من 1991 إلى اليوم</summary><p>انطلقت الجامعة كلية أهلية خيرية بالخرطوم تؤمن بالتعليم التطبيقي، وكبرت بمعاملها وورشها وكادرها حتى نالت صفة الجامعة الحكومية عام 2018 لحاجة السودان إلى تعليم تقني يسدّ الفجوة بين الخريج وسوق العمل ولتوطين كادرها في الخدمة المدنية.</p></details>
+<details><summary>اعتماد مرتبة الشرف 2026</summary><p>باعتماد مرتبة الشرف للبكالوريوس التكنولوجي (5 سنوات) في 20 أغسطس 2026 أصبحت شهادة الجامعة معترفاً بها داخلياً وخارجياً، مع إمكانية الالتحاق المباشر بالماجستير.</p></details>
+<details><summary>كيف تستفيد من الجمعية في عامك الأول؟</summary><p>تواصل مع الطلاب الأقدم، واطّلع على الامتحانات والبحوث السابقة، وشارك في الفعاليات، وارفع مشكلاتك للجمعية لتنسق حلها مع الإدارات.</p></details>
+</section>
+
+<section id="register">
+<h2>سجّل بياناتك للتواصل معك</h2>
+<div class="card">
+<form id="f">
+<div><label>رقم الاستمارة</label><input id="uid" inputmode="numeric" pattern="[0-9]+" required><small class="h">اكتب رقم استمارة القبول الخاص بك صحيحاً.</small></div>
+<div><label>الاسم الرباعي</label><input id="nm" required></div>
+<div><label>التخصص</label><select id="mj" required><option value="">اختر التخصص</option><option>نظم معلومات - محاسبية</option><option>نظم معلومات - إدارية</option><option>نظم معلومات - مصرفية</option></select></div>
+<div><label>رقم الواتساب</label><input id="wa" inputmode="tel" required></div>
+<div><label>رقم المكالمات</label><input id="ph" inputmode="tel" required></div>
+<button class="btn" type="submit">إرسال</button>
+</form>
+<div id="m" class="msg"></div>
+</div>
+</section>
+
+<section id="contact">
+<h2>تواصل معنا</h2>
+<div class="grid">
+<div class="card"><h3>📍 موقع الجامعة</h3>شارع محمد نجيب، جنوب جهاز المغتربين.<br><a class="btn" href="https://maps.app.goo.gl/MqPnHbbkGpcUVeqNA?g_st=ic" target="_blank" rel="noopener">افتح في خرائط قوقل</a></div>
+<div class="card"><h3>📞 أرقام الاستفسار</h3><div id="cinfo">واتساب: <a id="cwa" href="https://wa.me/249900864347" target="_blank" rel="noopener"><b>0900864347</b></a><br>اتصال: <a id="cph" href="tel:0900864347"><b>0900864347</b></a></div></div>
+<div class="card"><h3>🔗 صفحاتنا</h3>
+<a class="btn" href="https://www.facebook.com/share/14rvM1Qe9aT/" target="_blank" rel="noopener">جمعية نظم المعلومات</a>
+<a class="btn alt" style="color:var(--pri)" href="https://www.facebook.com/share/1E6Pg2NKAU/" target="_blank" rel="noopener">الجامعة الرسمية</a>
+<a class="btn alt" style="color:var(--pri)" href="https://www.facebook.com/share/1FBBrwR1JP/" target="_blank" rel="noopener">الإعلام الطلابي</a></div>
+</div>
+</section>
+
+<footer><div class="fl"><img src="assets/uni.png" alt=""><img src="assets/assoc.png" alt=""></div><span id="cp">© 2026 جمعية نظم المعلومات — الجامعة التكنولوجية</span></footer>
+<button class="tbtn" id="tb" title="الوضع الليلي">🌓</button>
+
+<div id="adm"><div class="box">
+<div class="row"><h2 style="margin:0;flex:1">لوحة المشرف</h2><button class="btn" id="out">إغلاق</button></div>
+<div id="lg"><label>كلمة السر</label><div class="row"><input type="password" id="pw"><button class="btn" id="go">دخول</button></div><div id="lm" class="msg err"></div></div>
+<div id="pn" style="display:none">
+<div class="card"><h3>أرقام الاستفسار (تظهر في الموقع)</h3><div class="row"><input id="e1" value="0900864347" placeholder="رقم الواتساب"><input id="e2" value="0900864347" placeholder="رقم الاتصال"><button class="btn" id="sv">حفظ</button></div></div>
+<div class="row"><input id="q" placeholder="بحث بالاسم أو رقم الاستمارة"><select id="fm"><option value="">كل التخصصات</option><option>نظم معلومات - محاسبية</option><option>نظم معلومات - إدارية</option><option>نظم معلومات - مصرفية</option></select><button class="btn" id="csv">تصدير CSV</button><button class="btn alt" style="color:var(--pri)" id="rf">تحديث</button></div>
+<p id="cnt"></p><div class="wrap"><table><thead><tr><th>#</th><th>رقم الاستمارة</th><th>الاسم</th><th>التخصص</th><th>واتساب</th><th>مكالمات</th><th></th></tr></thead><tbody id="tb2"></tbody></table></div>
+</div></div></div>
+
+<script>
+const WA_NUM="249900864347"; // ضع رقم واتساب المشرف بصيغة دولية بدون +
+const HASH="3c24a8ba561a7c7c63e3282483ebbf16607e55f9ed868093d3818a15f323fa13";
+const $=i=>document.getElementById(i);
+let db=null,rows=[];
+const show=(el,t,c)=>{el.className="msg "+c;el.textContent=t;el.style.display="block"};
+async function sha(s){const b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(s));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join("")}
+window.addEventListener("load",()=>{const _s=()=>{try{return JSON.parse(localStorage.getItem("isdb")||"{}")}catch(e){return{}}},_w=m=>localStorage.setItem("isdb",JSON.stringify(m));
+const _db={doc:p=>({get:async()=>{const v=_s()[p];return{exists:v!==undefined,data:()=>v}},set:async v=>{const m=_s();m[p]=v;_w(m)},delete:async()=>{const m=_s();delete m[p];_w(m)}}),collection:c=>({get:async()=>{const m=_s();return{docs:Object.keys(m).filter(k=>k.startsWith(c+"/")).map(k=>({data:()=>m[k]}))}}})};
+db=_db;loadCfg();});
+async function loadCfg(){try{const s=await db.doc("config/site").get();if(s.exists){const d=s.data();if(d.wa){$("cwa").firstChild.textContent=d.wa;$("cwa").href="https://wa.me/249"+d.wa.replace(/^0/,"")}if(d.ph){$("cph").firstChild.textContent=d.ph;$("cph").href="tel:"+d.ph}$("e1").value=d.wa||"0900864347";$("e2").value=d.ph||"0900864347"}}catch(e){}}
+$("f").onsubmit=async e=>{e.preventDefault();const id=$("uid").value.trim();
+if(!/^\d+$/.test(id)){show($("m"),"رقم الاستمارة أرقام فقط.","err");return}
+const rec={uid:id,name:$("nm").value.trim(),major:$("mj").value,wa:$("wa").value.trim(),ph:$("ph").value.trim()};
+const viaWA=()=>{const t="تسجيل طالب جديد - نظم المعلومات%0Aرقم الاستمارة: "+rec.uid+"%0Aالاسم: "+encodeURIComponent(rec.name)+"%0Aالتخصص: "+encodeURIComponent(rec.major)+"%0Aواتساب: "+rec.wa+"%0Aمكالمات: "+rec.ph;window.open("https://wa.me/"+WA_NUM+"?text="+t.replace(/^[^%]*/,m=>encodeURIComponent(m)),"_blank");$("f").reset();show($("m"),"تم تجهيز رسالة التسجيل في واتساب، اضغط إرسال هناك لإكمال التسجيل.","ok")};
+if(!db){viaWA();return}
+try{await db.doc("registrations/"+id).set({uid:id,name:$("nm").value.trim(),major:$("mj").value,wa:$("wa").value.trim(),ph:$("ph").value.trim(),at:Date.now()});viaWA()}catch(x){viaWA()}};
+let _k=0;$("cp").onclick=()=>{if(++_k>=5){_k=0;$("adm").style.display="block"}};if(location.hash==="#admin")$("adm").style.display="block";
+$("out").onclick=()=>{$("adm").style.display="none";$("pn").style.display="none";$("lg").style.display="block";$("pw").value=""};
+$("go").onclick=async()=>{if(await sha($("pw").value)===HASH){$("lg").style.display="none";$("pn").style.display="block";refresh()}else show($("lm"),"كلمة السر غير صحيحة.","err")};
+async function refresh(){if(!db){$("cnt").textContent="لا توجد بيانات.";return}
+try{const s=await db.collection("registrations").get();rows=s.docs.map(d=>d.data()).sort((a,b)=>b.at-a.at);draw()}catch(e){$("cnt").textContent="لا تملك صلاحية قراءة السجلات."}}
+function draw(){const q=$("q").value.trim(),f=$("fm").value;const r=rows.filter(x=>(!f||x.major===f)&&(!q||x.name.includes(q)||x.uid.includes(q)));
+$("cnt").textContent="عدد المسجلين: "+r.length+" من "+rows.length;const tb=$("tb2");tb.textContent="";
+r.forEach((x,i)=>{const tr=document.createElement("tr");[i+1,x.uid,x.name,x.major,x.wa,x.ph].forEach(v=>{const td=document.createElement("td");td.textContent=v;tr.appendChild(td)});
+const td=document.createElement("td"),b=document.createElement("button");b.textContent="حذف";b.className="btn";b.onclick=async()=>{if(confirm("حذف هذا السجل؟")){await db.doc("registrations/"+x.uid).delete();refresh()}};td.appendChild(b);tr.appendChild(td);tb.appendChild(tr)})}
+$("q").oninput=draw;$("fm").onchange=draw;$("rf").onclick=refresh;
+$("sv").onclick=async()=>{try{await db.doc("config/site").set({wa:$("e1").value.trim(),ph:$("e2").value.trim()});loadCfg();alert("تم الحفظ")}catch(e){alert("تعذّر الحفظ")}};
+$("csv").onclick=async()=>{const esc=v=>'"'+String(v).replace(/"/g,'""')+'"';const t="\ufeff"+["رقم الاستمارة,الاسم,التخصص,واتساب,مكالمات"].concat(rows.map(x=>[x.uid,x.name,x.major,x.wa,x.ph].map(esc).join(","))).join("\n");
+const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([t],{type:"text/csv;charset=utf-8"}));a.download="registrations.csv";a.click()};
+$("tb").onclick=()=>{const r=document.documentElement;r.dataset.theme=(r.dataset.theme==="dark"||(!r.dataset.theme&&matchMedia("(prefers-color-scheme:dark)").matches))?"light":"dark"};
+</script>
+</body>
+</html>
